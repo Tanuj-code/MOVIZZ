@@ -79,7 +79,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'telusko.wsgi.application'
 
-
+HOST_NAME='https://web-production-fd4f.up.railway.app/'
+CSRF_TRUSTED_ORIGINS = ['https://web-production-fd4f.up.railway.app','https://web-production-fd4f.up.railway.app/rec','https://web-production-fd4f.up.railway.app/contact']
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
