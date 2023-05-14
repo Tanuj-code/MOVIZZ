@@ -5,13 +5,26 @@
         #sub{
           
             cursor:pointer;
+            font-size: 1vw;
         }
         html, body {
             max-width: 100%;
             
+                font-size:1.2vw;
+            
         }
+        
+        input::placeholder {
+            font-size:1vw;
+          }
+         
         textarea {
             resize: vertical;
+            
+        }
+        textarea::placeholder {
+            font-size:1vw;
+            
         }
         #bor{
             border: 0.2em solid black;
@@ -24,11 +37,11 @@
 <form action="contact" method="POST">
     {% csrf_token %}
 <input type="text" name="name" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Name" required>
-<input type="email" name="email" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Email (If invalid email is entered, the message will not be sent and the page will be reloaded on submission.)" required>
+<input type="email" name="email" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Email" required>
 <input type="number" name="ph" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Phone Number" required>
 <textarea style="width: 95%; padding: 1%;  margin:1%;  height:10vw;" placeholder="Message" name="desc" required>
 </textarea>
-<input type="submit" id="sub" style="background-color:#555555; border: 0.2em solid black; color:white; width: 8%; padding: 1%; margin:1%;"></input>
+<input type="submit" id="sub" value="Send" style="background-color:#555555; border: 0.2em solid black; color:white; width: fit-content; padding: 0.8% 2%; margin:1%;"></input>
 </input>
 
 </form>
