@@ -1,0 +1,48 @@
+{%extends 'basecontact.html'%}
+{%block content%}
+
+    <style>
+        #sub{
+          
+            cursor:pointer;
+        }
+        html, body {
+            max-width: 100%;
+            
+        }
+        textarea {
+            resize: vertical;
+        }
+        #bor{
+            border: 0.2em solid black;
+            padding: 1%;
+            margin:1%;
+        }
+    </style>
+<div id="bor">
+    
+<form action="contact" method="POST">
+    {% csrf_token%}
+<input type="text" name="name" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Name" required>
+<input type="email" name="email" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Email (If invalid email is entered, the message will not be sent and the page will be reloaded on submission.)" required>
+<input type="number" name="ph" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Phone Number" required>
+<textarea style="width: 95%; padding: 1%;  margin:1%;  height:10vw;" placeholder="Message" name="desc" required>
+</textarea>
+<input type="submit" id="sub" style="background-color:#555555; border: 0.2em solid black; color:white; width: 8%; padding: 1%; margin:1%;"></input>
+</input>
+
+</form>
+</div>
+<script>
+    document.getElementById("sub").addEventListener("mouseover", ()=>{
+        document.getElementById("sub").style.color="black";
+        document.getElementById("sub").style.backgroundColor="white";
+    })
+    document.getElementById("sub").addEventListener("mouseout", ()=>{
+        document.getElementById("sub").style.color="white";
+        document.getElementById("sub").style.backgroundColor="#555555";
+    })
+    
+
+</script>
+{%endblock%}

@@ -1,0 +1,119 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+    
+      .add{
+        border: 0.2em solid black;
+        padding:1%;
+        margin:1%;
+        background-color:lightgrey;
+      }
+      form{
+        border: 0.2em solid black;
+        padding: 1%;
+        margin: 1%;
+      }
+      
+        .ad{
+            background-color:#ff6600;
+            margin:1%;
+            border: 0.2em solid black;
+        }
+        
+        #sub{
+            
+            cursor:pointer;
+        }
+</style>
+
+<form action="rec" method="POST">
+    {% csrf_token%}
+<input type="text" name="mov" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Search for your movie">
+</input>
+
+<input id="sub" type="submit" style="background-color:#555555; border: 0.2em solid black;  color:white; width: 8%; padding: 0.8%;  margin:1%;"></input>
+</form>
+
+{%if l1%}
+<div class="ad"  style="padding: 1%;  ">
+   
+    <b><i>Similar Movies</i></b>
+    
+    
+    </div>
+{%for x,y,z in l1%}
+<div  class="add" style="padding: 1%; margin-top:2%;">
+<p><b>{{x}}</b></p>
+<img src={{y}} style="border: 2px solid black; " width="8%" >
+<p><b><i>Tags: </i></b> {{z}}</p>
+
+</div>
+{% endfor %}
+{%endif%}
+{%if l2%}
+<div class="ad"  style="padding: 1%; ">
+    
+    <b><i>Other movies of the actors/actresses</i></b>
+    
+    
+    </div>
+{%for x,y,z in l2%}
+<div  class="add" style="padding: 1%; margin-top:2%;">
+<p><b>{{x}}</b></p>
+<img src={{y}} style="border: 2px solid black; " width="8%" >
+<p><b><i>Tags: </i></b> {{z}}</p>
+
+</div>
+{% endfor %}
+{%endif%}
+{%if l3%}
+<div class="ad"  style="padding: 1%; ">
+   
+    <b><i>Movies with similar genres</i></b>
+    
+    </div>
+{%for x,y,z in l3%}
+<div class="add"  style="padding: 1%; margin-top:2%;">
+<p><b>{{x}}</b></p>
+<img src={{y}} style="border: 2px solid black; " width="8%" >
+<p><b><i>Tags: </i></b> {{z}}</p>
+
+</div>
+{% endfor %}
+{%endif%}
+{%if l4%}
+<div class="ad"  style="padding: 1%; ">
+   
+    <b><i>Movies by the actor/actress</i></b>
+    
+    
+    </div>
+{%for x,y,z in l4%}
+<div class="add" style="padding: 1%;  ">
+<p><b>{{x}}</b></p>
+<img src={{y}} style="border: 2px solid black; " width="8%" >
+<p><b><i>Tags: </i></b> {{z}}</p>
+
+</div>
+{% endfor %}
+{%endif%}
+{%if not l1  %}
+{%if not l2  %}
+{%if not l3  %}
+{%if not l4  %}
+<h4  class="ad" style="padding: 1%;  background-color:#ff6600;"><i>Sorry, no recommendations yet. Please enter a value above.</i></h4>
+{%endif%}
+{%endif%}
+{%endif%}
+{%endif%}
+<script>
+    document.getElementById("sub").addEventListener("mouseover", ()=>{
+        document.getElementById("sub").style.color="black";
+        document.getElementById("sub").style.backgroundColor="white";
+    })
+    document.getElementById("sub").addEventListener("mouseout", ()=>{
+        document.getElementById("sub").style.color="white";
+        document.getElementById("sub").style.backgroundColor="#555555";
+    })
+</script>
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends 'basetop.html'%}
+
+{%block content%}
+<style>
+    .add{
+        border: 0.2em solid black;
+        padding:1%;
+        margin:1%;
+        background-color:lightgrey;
+      }
+</style>
+<h3 style="padding: 1%;  margin:1%; border: 0.2em solid black; background-color:#ff6600;">Top 50 Movies</h3>
+{%for x,y,z,a,b,c in ratlist%}
+<div  class="add"  >
+<p><b>{{x}}</b></p>
+<img src={{y}} style="border: 2px solid black; " width="8%" >
+<p><b><i>Overview:</i></b> {{z}}</p>
+<p><b><i>Release:</b></i> {{a}}</p>
+<p><b><i>Certification:</b> </i>{{b}}</p>
+<p><b><i>Runtime:</b></i> {{c}}</p>
+
+</div>
+{% endfor %}
+{%endblock%}
