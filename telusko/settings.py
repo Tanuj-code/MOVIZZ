@@ -82,13 +82,13 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'telusko',
-        'USER':'postgres',
-        'PASSWORD':'5432',
-        'HOST':'localhost',
-    }
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': 'telusko',
+    #    'USER':'postgres',
+     #   'PASSWORD':'5432',
+      #  'HOST':'localhost',
+    #}
 }
 
 
