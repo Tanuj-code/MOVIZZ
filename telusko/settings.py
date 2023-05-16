@@ -81,7 +81,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'telusko.wsgi.application'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-fd4f.up.railway.app','https://web-production-fd4f.up.railway.app/rec','https://web-production-fd4f.up.railway.app/contact']
+CSRF_TRUSTED_ORIGINS = ['https://moviz.up.railway.app','https://moviz.up.railway.app/rec','https://moviz.up.railway.app/contact', 'https://moviz.up.railway.app/top']
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
