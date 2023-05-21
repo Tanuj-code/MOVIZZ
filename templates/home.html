@@ -38,10 +38,10 @@
 
 <form action="rec" method="POST">
     {% csrf_token %}
-<input type="text" id="txt" name="mov" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Search for your movie">
+<input type="text" id="txt" name="mov" style="width: 95%; padding: 1%;  margin:1%;" placeholder="Search for your movie, genre, actors">
 </input>
 
-<input id="sub" value="Search" type="submit" style="background-color:#555555; border: 0.2em solid black;  color:white; width: fit-content; padding: 0.8% 2%;  margin:1%;"></input>
+<input id="sub" value="Recommend" type="submit" style="background-color:#555555; border: 0.2em solid black;  color:white; width: fit-content; padding: 0.8% 2%;  margin:1%;"></input>
 </form>
 
 {%if l1%}
